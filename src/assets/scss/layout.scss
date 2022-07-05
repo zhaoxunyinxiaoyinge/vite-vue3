@@ -1,0 +1,48 @@
+$layoutHeight: 60px;
+$layoutAside: auto;
+$layoutMain: auto;
+
+$bgColor: rgb(208, 72, 72);
+
+html,
+body {
+  height: 100%;
+  background-color: $bgColor;
+}
+
+.container {
+  height: 100%;
+}
+
+.header {
+  height: $layoutHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  // background-color: rgba(241, 247, 242, 0.904);
+}
+
+.content {
+  height: calc(100% - 60px);
+  display: flex;
+}
+
+.aside {
+  width: $layoutAside;
+  // background-color: rgba(98, 4, 4, 0.843);
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+}
+
+.el-menu {
+  border:none;
+
+}
+
+
+
+

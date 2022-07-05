@@ -1,0 +1,53 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': green,
+    ),
+  ),
+);
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+$el-sub-menu__title_hover_bg:rgba(135, 17, 17, 0.923);
+
+
+$breaum-height:50px;
+$router-list-height:50px;
+
+$breaum-bg:#fff;
+$router-list-bg:#fff;
+
+.el-aside {
+  background-color:rgba(97, 8, 8, 0.894);
+}
+
+.el-menu {
+  background-color:rgba(97, 8, 8, 0.894);
+}
+.el-menu-item,.el-sub-menu {
+  span,.el-icon {
+     color:#fff 
+  }
+}
+
+.el-sub-menu__title:hover,.el-menu-item:hover {
+  background: $el-sub-menu__title_hover_bg;
+}
+
+.breaum {
+  display: flex;
+  align-items: center;
+  height:$breaum-height;
+  background:$breaum-bg;
+  border-bottom:1px solid #eee;
+  padding-left: 20px;
+}
+
+.route-list{
+  height:$router-list-height;
+  background-color: $router-list-bg;
+}
+
+.el-main.main {
+  padding-top: 0px;
+}
