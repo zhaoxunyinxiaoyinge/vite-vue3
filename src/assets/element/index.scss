@@ -1,3 +1,4 @@
+// 引用指定的样式文件并传递参数
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (
@@ -6,6 +7,8 @@
   ),
 );
 
+
+// 替代@import 的使用引入一个外部样式表， 命名空间为全局
 @use "element-plus/theme-chalk/src/index.scss" as *;
 
 $el-sub-menu__title_hover_bg:rgba(135, 17, 17, 0.923);
@@ -30,7 +33,15 @@ $router-list-bg:#fff;
   }
 }
 
-.el-sub-menu__title:hover,.el-menu-item:hover {
+.el-menu-item.is-active,.el-sub-menu__title.el-active {
+  span,.el-icon {
+    color:rgb(216, 205, 205)
+ }
+}
+
+
+
+.el-sub-menu__title:hover,.el-menu-item:hover,.el-sub-menu__title:hover,.el-menu-item.is-active,.el-sub-menu__title.el-active {
   background: $el-sub-menu__title_hover_bg;
 }
 
@@ -50,4 +61,11 @@ $router-list-bg:#fff;
 
 .el-main.main {
   padding-top: 0px;
+}
+
+.route-list {
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  align-items: center;
 }

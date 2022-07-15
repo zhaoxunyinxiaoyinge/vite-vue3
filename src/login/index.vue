@@ -36,10 +36,11 @@ import { onMounted, reactive, ref, watch, watchEffect } from "vue";
 import { useRouter, useRoute, onBeforeRouteUpdate } from "vue-router";
 import { useStore } from "vuex"
 import { ElMessage } from "element-plus";
+import { ElementNode } from "@vue/compiler-core";
 
-    let div = ref(null);
-    let form = ref(null);
-    let redirect = ref(null);
+    let div = ref<any>(null);
+    let form = ref<any>(null);
+    let redirect = ref<string| null>(null);
     let otherQuery = ref(null);
 
     const router = useRouter();
@@ -65,13 +66,13 @@ import { ElMessage } from "element-plus";
     const login = () => {
       let { validate } = form.value.$.ctx;
       let { username, password } = formData;
+      console.log(form,'form')
 
       validate((res) => {
         if (res) {
           // 触发用户登录
           store.dispatch("login/login", { username, password }).then(
             (res) => {
-              console.log(res, "登录成功");
               if (res.code == 0) {
                 window.localStorage.setItem("token", res.data.token);
                 router.push({

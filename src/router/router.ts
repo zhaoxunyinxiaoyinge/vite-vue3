@@ -13,7 +13,7 @@ const containRoute: Array<RouteRecordRaw> = [
   {
     path: "/",
     meta: {
-      title: "首页",
+      title: "主页",
       hidden: false,
     },
     component: defineAsyncComponent(() => import("@/layout/index.vue")),
@@ -37,8 +37,8 @@ const containRoute: Array<RouteRecordRaw> = [
   {
     path:"/stylems",
     meta:{
-      title:'系统设置',
-      hidden:false
+      title:'系统',
+      hidden:false,
     },
     component: defineAsyncComponent(() => import("@/layout/index.vue")),
     redirect: "/stylems/index",

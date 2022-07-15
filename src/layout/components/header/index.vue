@@ -1,8 +1,11 @@
 <script lang="ts">
-import { defineComponent,ref} from 'vue'
+import { defineComponent} from 'vue'
 
 import inli8 from "@/layout/components/in8/index.vue"
 import Dropdown from "@/layout/components/dropdown/index.vue"
+import screenFull from "@/layout/components/header/screen.vue"
+
+
 import { useDark, useToggle } from '@vueuse/core'
 
 export default defineComponent({
@@ -20,7 +23,8 @@ export default defineComponent({
     },
     components:{
         inli8,
-        Dropdown
+        Dropdown,
+        screenFull
     }
 })
 </script>
@@ -30,8 +34,8 @@ export default defineComponent({
             <span class="back">vue3后台管理系统</span>
         </section>
         <section class="flex flex-end align-items flex-auto" >
-            <!-- 查询表单 -->
-
+            <!-- 缩放组件 -->
+            <screenFull></screenFull>
             <!-- color -->
              <el-color-picker v-model="color" />
 

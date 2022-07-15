@@ -3,6 +3,8 @@ import axios,{AxiosDefaults} from "axios";
 import Cookies from "js-cookie";
 import { ElMessage } from 'element-plus'
 
+console.log(import.meta.env,'env')
+
 let token=Cookies.get('token')||'';
 // 设置axios的默认配置
 /**
@@ -19,6 +21,8 @@ let serve = axios.create({
   baseURL: "http://localhost:3001",
   timeout: 5000,
 });
+
+
 
 serve.interceptors.request.use((config)=>{ 
     return config

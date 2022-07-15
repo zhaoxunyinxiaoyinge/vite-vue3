@@ -2,6 +2,7 @@ import { defineComponent, ref, reactive, DefineComponent } from "vue";
 import Sitem from "./sItem";
 import {userstore} from "@/store/expmle"
 import path from "path"; 
+import Cookies from "js-cookie";
 console.log(path)
 
 export default defineComponent({
@@ -18,6 +19,8 @@ export default defineComponent({
     }
 
     let store=userstore();
+
+    let currentRoute=ref(Cookies.get('current')||'/welcome');
 
     let routes = reactive([
       {
@@ -42,10 +45,10 @@ export default defineComponent({
             ),
           },
           {
-            path: "/welcome",
+            path: "/other",
             redirect: "",
             meta: {
-              title: "卢比",
+              title: "其他",
               icon: "",
               hidden: false,
             },
@@ -90,7 +93,7 @@ export default defineComponent({
     const rendDom = () => {
       return (
         <el-menu
-          default-active={['/weclome/index']}
+          default-active={currentRoute}
           collapse={store.getCollapseValue}
           style={{width:store.getCollapseValue?'auto':'200px'}}
           open={handleOpen}

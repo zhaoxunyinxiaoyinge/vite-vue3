@@ -1,10 +1,18 @@
 <script setup lang="ts">
+    import {toRef} from "vue"
+   import { ElConfigProvider } from 'element-plus'
+   import zhCn from 'element-plus/lib/locale/lang/zh-cn' 
+   import en from 'element-plus/lib/locale/lang/en' ;
+   import {userstore} from './store/expmle';
+   const {lang}=toRefs(userstore());
 </script>
 <template>
+<el-config-provider :locale="lang=='en'?en:zhCn">
   <div class="app">
     <router-view>
     </router-view>
-  </div>
+   </div>
+</el-config-provider>
 </template>
 <style>
 .app {

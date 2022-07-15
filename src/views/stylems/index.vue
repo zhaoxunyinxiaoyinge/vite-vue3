@@ -113,5 +113,7 @@ const data = ref(generateData(columns, 1000));
 <template>
     <div>
         <el-table-v2 :columns="columns" :data="data" :width="contentWidth" :height="600" fixed />
+        <el-pagination   @size-change="handleSizeChange"
+         @current-change="handleCurrentChange"   layout="total, sizes, prev, pager, next, jumper" :total="1000" />
     </div>
 </template>

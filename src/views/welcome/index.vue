@@ -7,6 +7,7 @@
 import { onMounted, ref } from "vue";
 import * as Highcharts from "highcharts";
 import * as Exporting from "highcharts/modules/exporting";
+
 Exporting(Highcharts);
 
 const height=ref(0);
@@ -49,7 +50,8 @@ onMounted(() => {
 });
 </script>
 
-<style scoped  >
+<style scoped  lang="scss">
+    // @use './../../assets/scss/layout'; 使用新的scss语法导入scss
     #container {
         height:var(--height)+'px';
     }

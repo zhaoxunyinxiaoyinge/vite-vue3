@@ -1,3 +1,12 @@
+
+
+// @use "common.scss" as contor;//导入一个scss文件，并且命名空间
+
+
+// .test-father {
+  // @extend contor,.test !optional  # 使用导入的scss文件并带上命名空间
+// }
+
 $layoutHeight: 60px;
 $layoutAside: auto;
 $layoutMain: auto;
@@ -20,7 +29,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  // background-color: rgba(241, 247, 242, 0.904);
+  background-color: rgba(241, 247, 242, 0.904);
 }
 
 .content {
@@ -42,6 +51,8 @@ body {
   border:none;
 
 }
+
+
 
 
 

@@ -21,10 +21,15 @@
 </template>
 
 <script lang="ts">
-  import {defineComponent,ref} from "vue";
+  import {defineComponent,ref,onBeforeMount} from "vue";
+  import {useRoute} from "vue-router"
   export default defineComponent({
     setup(){
-      let message=ref<string>('404')
+      let message=ref<string>('404');
+      let route=useRoute();
+      onBeforeMount(()=>{
+        console.log(route,"router")
+      })
 
       return {
         message
